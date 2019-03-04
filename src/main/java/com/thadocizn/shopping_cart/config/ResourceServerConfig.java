@@ -22,6 +22,7 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter
 
 //    curl -X POST --user 'lambda-client:lambda-secret' -d 'grant_type=password&username=sally&password=password' 'http://localhost:8080/oauth/token'
 
+    // todo update this
     @Override
     public void configure(HttpSecurity http) throws Exception {
         http.
