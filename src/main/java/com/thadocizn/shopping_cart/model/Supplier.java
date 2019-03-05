@@ -1,11 +1,10 @@
 package com.thadocizn.shopping_cart.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Data
@@ -16,7 +15,17 @@ public class Supplier {
 
     private String name;
 
+    @ManyToMany
+    @JoinColumn(name = "id")
+    @JsonIgnoreProperties("suppliers")
+    private Set<ProductList> supplier_products;
+
     public Supplier() {
     }
+
+    public Set<ProductList> getSupplier_products() {
+        return supplier_products;
+    }
+
 
 }

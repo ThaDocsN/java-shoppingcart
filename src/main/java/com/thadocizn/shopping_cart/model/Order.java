@@ -2,11 +2,16 @@ package com.thadocizn.shopping_cart.model;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
+import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Data
 public class Order {
+
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long orderId;
 
     private String productName;
     private String shippingAddress;
@@ -14,6 +19,13 @@ public class Order {
     private boolean hasShipped;
     private int productQuantity;
 
+    @OneToMany(cascade = CascadeType.REMOVE, mappedBy = "order")
+    private Set<ProductList> products = new HashSet<>();
+
     public Order() {
+    }
+
+    public Set<ProductList> getProducts() {
+        return products;
     }
 }
