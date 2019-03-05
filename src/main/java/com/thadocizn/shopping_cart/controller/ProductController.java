@@ -5,6 +5,7 @@ import com.thadocizn.shopping_cart.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -16,8 +17,14 @@ public class ProductController {
 
     @Autowired
     ProductRepository productRepo;
+
     @GetMapping(value = "")
     public List<Product> listAllProducts(){
         return productRepo.findAll();
+    }
+
+    @GetMapping(value = "/products/name/{productName}")
+    public Product getProductsByName(@PathVariable String productName){
+        return productRepo.findByProductName(productName);
     }
 }
