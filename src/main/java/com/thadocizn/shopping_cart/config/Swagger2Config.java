@@ -35,7 +35,7 @@ public class Swagger2Config {
 
     private ApiInfo apiEndPointInfo() {
 
-        return new ApiInfoBuilder().title("Bookstore")
+        return new ApiInfoBuilder().title("Shopping Cart")
                 .description("Todo App")
                 .contact(new Contact("Charles Johnson", "https://www.linkedin.com/in/charles-johnson-a9666913/", "charles.tha.doc@gmail.com"))
                 .license("MIT")
