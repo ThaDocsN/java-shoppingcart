@@ -11,7 +11,7 @@ import java.util.Set;
 public class Supplier {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private long supplierId;
 
     private String name;
 

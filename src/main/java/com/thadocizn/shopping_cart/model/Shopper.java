@@ -11,7 +11,7 @@ public class Shopper {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private long shopperId;
 
     private String billAddress;
     private String shipAddress;

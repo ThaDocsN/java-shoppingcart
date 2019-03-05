@@ -15,20 +15,20 @@ public class ProductList {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private long productId;
 
     @ManyToOne
-    @JoinColumn(name ="order_id")
+    @JoinColumn(name ="orderId")
     @JsonIgnore
     private Order order;
 
     @ManyToOne
-    @JoinColumn(name ="cart_id")
+    @JoinColumn(name ="cartId")
     @JsonIgnore
     private Cart cart;
 
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinColumn(name = "supplier_id")
+    @JoinColumn(name = "supplierId")
     @JsonIgnoreProperties("products")
     private Set<Supplier> suppliers = new HashSet<>();
 
