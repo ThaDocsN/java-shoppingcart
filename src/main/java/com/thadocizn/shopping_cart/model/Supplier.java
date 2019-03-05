@@ -18,12 +18,12 @@ public class Supplier {
     @ManyToMany
     @JoinColumn(name = "id")
     @JsonIgnoreProperties("suppliers")
-    private Set<ProductList> supplier_products;
+    private Set<Product> supplier_products;
 
     public Supplier() {
     }
 
-    public Set<ProductList> getSupplier_products() {
+    public Set<Product> getSupplier_products() {
         return supplier_products;
     }
 

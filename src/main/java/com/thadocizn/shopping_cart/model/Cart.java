@@ -18,10 +18,10 @@ public class Cart {
     private int quantity;
 
     @OneToMany(cascade = CascadeType.REMOVE, mappedBy = "cart")
-    private Set<ProductList> products = new HashSet<>();
+    private Set<Product> products = new HashSet<>();
     public Cart() {
     }
-    public Set<ProductList> getProducts() {
+    public Set<Product> getProducts() {
         return products;
     }
 }

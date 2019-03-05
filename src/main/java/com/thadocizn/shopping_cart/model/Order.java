@@ -20,12 +20,12 @@ public class Order {
     private int productQuantity;
 
     @OneToMany(cascade = CascadeType.REMOVE, mappedBy = "order")
-    private Set<ProductList> products = new HashSet<>();
+    private Set<Product> products = new HashSet<>();
 
     public Order() {
     }
 
-    public Set<ProductList> getProducts() {
+    public Set<Product> getProducts() {
         return products;
     }
 }

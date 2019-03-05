@@ -11,7 +11,7 @@ import java.util.Set;
 @Entity
 @Data
 @Table
-public class ProductList {
+public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -37,7 +37,7 @@ public class ProductList {
     private double price;
     private int quantity;
 
-    public ProductList() {
+    public Product() {
     }
 
     public Set<Supplier> getSuppliers() {
