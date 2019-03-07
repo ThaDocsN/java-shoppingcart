@@ -11,12 +11,18 @@ import java.util.Set;
 public class Order {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "order_id")
     private long orderId;
 
+    @Column(name = "product_name")
     private String productName;
+    @Column(name = "shipping_address")
     private String shippingAddress;
+    @Column(name = "payment_details")
     private String paymentDetails;
+    @Column(name = "has_shipped")
     private boolean hasShipped;
+    @Column(name = "product_quantity")
     private int productQuantity;
 
     @OneToMany(cascade = CascadeType.REMOVE, mappedBy = "order")

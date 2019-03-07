@@ -3,10 +3,8 @@ package com.thadocizn.shopping_cart.model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+
+import javax.persistence.*;
 import java.util.Arrays;
 import java.util.List;
 
@@ -15,8 +13,10 @@ import java.util.List;
 @Table(name = "users")
 public class User {
     @Id @GeneratedValue
+    @Column(name = "user_id")
     private long userId;
 
+    @Column(name = "user_name")
     private String username;
 
     @JsonIgnore
